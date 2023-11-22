@@ -1,10 +1,5 @@
 const list = $("#list");
 
-// for (let i = 1; i < 6; i++) {
-//   let newLi = $("<li>").text("Task " + i);
-//   list.append(newLi);
-// }
-
 // $(".submit").click(function (event) {
 //   event.preventDefault();
 //   let newLi = $("<li>");
@@ -14,8 +9,18 @@ const list = $("#list");
 //   $("#userInput").val("").focus();
 // });
 
-$("button").click(function (event) {
+// $("button").click(function (event) {
+//   event.preventDefault();
+//   $("#list").append("<li>" + $("#userInput").val() + "</li>");
+//   $("#userInput").val("").focus();
+// });
+
+$("button").on("click", function (event) {
+  ajout(event);
+});
+
+function ajout(event) {
   event.preventDefault();
   $("#list").append("<li>" + $("#userInput").val() + "</li>");
   $("#userInput").val("").focus();
-});
+}
